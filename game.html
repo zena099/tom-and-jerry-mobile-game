@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="play">
+        <div class="top_btn">
+            <div class="replay">다시시작</div>
+            <div class="close">종료하기</div>
+        </div>
+        <div class="game">
+            <div class="board">
+                <div class="board_ch b_score">
+                    <p>누적점수<span class="score">0</span></p>
+                </div>
+                <div class="board_ch b_timer">
+                    <p>남은시간<span class="timer">30</span></p>
+                </div> 
+            </div>      
+            <div class="cell_box">
+                <div class="c0 cell">
+                    <div class="hole">
+                        <div class="jerry hidden"></div>
+                        <div class="bomb hidden"></div>
+                    </div>
+                </div>
+                <div class="c1 cell">
+                    <div class="hole">
+                        <div class="jerry hidden"></div> 
+                        <div class="bomb hidden"></div>
+                    </div>
+                </div>
+                <div class="c2 cell">
+                    <div class="hole">
+                        <div class="jerry hidden"></div>
+                        <div class="bomb hidden"></div>
+                    </div>                
+                </div>
+                <div class="c3 cell">
+                    <div class="hole">
+                        <div class="jerry hidden"></div>
+                        <div class="bomb hidden"></div>
+                    </div>
+                </div>
+                <div class="c4 cell">
+                    <div class="hole">
+                        <div class="jerry hidden"></div>
+                        <div class="bomb hidden"></div>
+                    </div>
+                </div>
+                <div class="c5 cell">
+                    <div class="hole">
+                        <div class="jerry hidden"></div>
+                        <div class="bomb hidden"></div>    
+                    </div>
+                </div>
+                <div class="c6 cell">
+                    <div class="hole">
+                        <div class="jerry hidden"></div>
+                        <div class="bomb hidden"></div>                        
+                    </div>
+                </div>
+                <div class="c7 cell">
+                    <div class="hole">
+                        <div class="jerry hidden"></div>
+                        <div class="bomb hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="end">
+        <div class="failed hide">
+            <div class="result">
+                <h1>RESULT</h1>
+                <img src="image/f_result.png" alt="톰을 걷어차는 제리">
+                <p>YOU FAILED!</p>
+                <button type="button" class="r_btn re_btn">다시하기</button>
+                <button type="button" class="r_btn sc_btn">점수확인</button>
+                <button type="button" class="r_btn sh_btn">공유하기</button>
+                <a href="#"></a>
+            </div>
+        </div>
+        <div class="win hide">
+            <div class="result">
+                <h1>RESULT</h1>
+                <img src="image/s_result.png" alt="톰을 걷어차는 제리">
+                <p>YOU WIN!</p>
+                <button type="button" class="r_btn re_btn">다시하기</button>
+                <button type="button" class="r_btn sc_btn">점수확인</button>
+                <button type="button" class="r_btn sh_btn">공유하기</button>
+                <a href="#"></a>
+            </div>
+        </div>
+        <div class="soc hide">
+            <div class="result">
+                <h1>RESULT</h1>
+                <div><sapn class="sc">0</sapn></div>
+                <p>YOUR SCORE</p>
+                <button type="button" class="r_btn re_btn">다시하기</button>
+                <button type="button" class="r_btn sc_btn">점수확인</button>
+                <button type="button" class="r_btn sh_btn">공유하기</button>
+                <a href="#"></a>
+            </div>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>

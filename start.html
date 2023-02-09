@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOM and JERRY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Do+Hyeon&display=swap" rel="stylesheet"    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <style type="text/css">
+    body,section,h1,button,img{
+		display: block;
+		margin: 0; padding: 0;
+	}
+
+    body {
+        background: #5BA3CB;
+        overflow: hidden;
+        font-size: 16px;
+        font-family: 'Bungee', 'Do Hyeon';
+    }
+
+    html,body{
+	    width: 100%; height: 100%;
+	}
+
+    #wrapper {
+        width: 100%;
+        height: 100%;
+        background: url("image/clouds.png") no-repeat 40% 35%;
+        background-size: 100% auto;
+        overflow: hidden;
+    }
+    
+    #wrapper > .top_m {
+        width: 100%;
+        height: 34.3%;
+        background: url("image/top_bg.png") no-repeat; 
+        background-size: 100% 61.87%;
+        margin: 0px auto;
+    }
+
+    #wrapper > .top_m > h1 {
+        width: 324px;
+        height: 280px;
+        background: url("image/logo.png") no-repeat center;
+        background-size: contain;
+        text-indent: -9999px;
+        margin: 0px auto;
+    }
+
+    #wrapper > .top_m > span {
+        display: block;
+        width: 57px;
+        height: 62px;
+        text-indent: -9999px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 4%;       
+    }
+
+    #wrapper > .top_m > .quick {
+        background: url("image/quick.png") no-repeat;
+        background-size: 100% 100%;
+        margin-left: -145px;
+    }
+
+    #wrapper > .top_m > .explain {
+        background: url("image/explain.png") no-repeat;
+        background-size: 100% 100%;
+        margin-left: 145px;
+    }
+ 
+    #wrapper >  .start {
+        width:235px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        border-radius: 100px;
+        border: 5px solid #E8ED00;
+        background: #E72D33;
+        margin-top: 40px;
+        color: #fff;
+        font-family: 'Bungee', Arial;
+        font-size: 26px;
+    }
+
+    #wrapper > .character {
+        width: 409px;
+        height: 270px;
+        position: absolute;
+        left: 50%;
+        bottom: 16%;
+        transform: translateX(-50%);
+        background: url("image/catch.png") no-repeat center;
+        background-size: 100% 100%;
+        z-index: 1000;
+    }
+
+    #wrapper > .bottom_g {   
+        width: 100%;
+        height: 21.56%;
+        position: absolute;
+        background: url("image/ground.png") no-repeat;
+        background-size: 100% 100%;
+        bottom: 0;
+    }
+
+    #wrapper > .bottom_bar {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        background: #E72D33;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+
+    #wrapper > .ex_box > .ex_content {
+        position: absolute;
+        width: 81.16%;
+        height: 47.2%;
+        background: #E72D33;
+        border: 5px solid #E8ED00;
+        border-radius: 20px;
+        box-sizing: border-box;
+        top:58%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+    }
+
+    #wrapper > .ex_box > .ex_content > h2 {
+        color: #fff;
+        text-align: center;
+        letter-spacing: 1px;
+        font-size: 2rem;
+    }
+
+    #wrapper > .ex_box > .ex_content > p {
+        color: #fff;
+        padding: 0.8rem;
+        box-sizing: border-box;
+        letter-spacing: -1px;
+        text-align: justify;
+        font-size: 1.7rem;
+        line-height: 2.3rem;
+        margin-top: -20px;
+    }
+
+    #wrapper > .ex_box > .ex_content > .close {
+        position: absolute;
+        width: 67px;
+        height: 67px;
+        background: url("image/close_btn.png") no-repeat;
+        background-size: 100% 100%;
+        bottom: -18%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    </style>
+</head>
+<body>
+	<section id="wrapper">
+        <div class="top_m">
+            <h1>TOM and JERRY</h1>
+            <span class="quick">게임종료</span>
+            <span class="explain">게임설명</span>
+        </div>
+        <button type="button" class="start">GAME START</button>
+        <div class="character"></div>
+        <div class="bottom_g"></div>
+        <div class="bottom_bar"></div>
+        <div class="ex_box hide">
+            <div class="ex_content">
+                <h2>게임설명</h2>
+                <p>
+                    톰을 도와 달아난 제리를 잡으세요. 제리를 잡으면 2점을 추가할 수 있습니다. 
+                    하지만 폭탄을 든 제리를 잡으면 2점을 잃을 수 있으니 주의하세요. 
+                    총 50점을 얻으면 승리하나 그 이하면 실패하게 됩니다.
+                </p>
+                <span class="close"></span>
+            </div>
+        </div>
+    </section>
+    <script>
+        window.addEventListener("load", function(){
+            const $html = document.querySelector('html');
+            const $body = document.querySelector('body');
+            const $start = document.querySelector('.start');
+            const $explain = document.querySelector('.explain');
+            const $exBox = document.querySelector('.ex_box');
+            const $closeBtn = document.querySelector('.close');
+
+            $body.addEventListener('touchstart',function(){});
+            
+            $start.addEventListener('click', function(){
+            window.location.href="game.html";
+            });
+
+            $explain.addEventListener('click', function(){
+                $exBox.classList.replace('hide', 'show');
+            });
+            
+            $closeBtn.addEventListener('click', function(){
+                $exBox.classList.replace('show', 'hide');
+            });
+        });
+    </script>
+</body>
+</html>
